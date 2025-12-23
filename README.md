@@ -37,21 +37,8 @@ Updates the simulation state and advances the date.
     ```
 
 ### Server API key authentication
-If `API_KEY_AUTH_ENABLED=true` in `./src/simtellus/.env`, the server http endpoint will look for api key parameter in requests, gives 401 if key not present. API keys are generated on every `./src/start-webserver.sh` run, (`scripts/generate-api-key.js`).
+If `API_KEY_AUTH_ENABLED=true` in `./.env`, the server http endpoint will look for api key parameter in requests, gives 401 if key not present. API keys must be generation is up to consumers.
 
-
-## Controlling the Ruby Server Container
-
-  ```
-  docker-compose up -d planet_sim      # Sim only
-  docker-compose ps                    # List containers
-  docker-compose logs planet_sim       # Container logs
-  docker-compose exec planet_sim sh    # Access the container
-  / # tail -f app/log/simtellus.log    # Server logs
-  docker-compose restart planet_sim    # Restart the container
-  docker-compose stop planet_sim       # Stop the container
-  docker-compose down                  # Remove the container
-  ```
 
 ## Tests for Simtellus modules
 Run tests whenever you change the modules, to catch any regressions by verifying that the simulation and server modules work as expected. The tests cover key functionalities: state initialization, weather computation, artifact storage, and endpoint responses.
