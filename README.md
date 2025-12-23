@@ -4,11 +4,12 @@ Simtellus simulates natural phenomena and environmental conditions of an Earth-l
 exoplanet. It provides endpoints for retrieving planet state, storing in-game artifacts,
 and updating the simulation.
 
+NOTE: This simulation server is from Mutonex game project, where it will be deprecated, and is now saved in a repository of its own. Many of the paths and references may be incorrect and missing, however this server is very simple.
 
 ## Server module
-Note  `./src/simtellus/.env.template` as basis for configuration `.env`-file, simtellus container cannot start otherwise.
+Note:  `./.env.template` as basis for configuration `.env`-file, simtellus container cannot start otherwise.
 
-In `./src/compose.yaml` ['planet_sim' service](https://github.com/csmr/mutonex/blob/8890cac548510e191cb936f68c0b591c8ebc0a91/src/compose.yaml#L24), repo dir `./src/simtellus` is mounted to `/app` of ruby-alpine container. Service runs [`start-simtellus.sh`](https://github.com/csmr/mutonex/blob/master/src/simtellus/start-simtellus.sh).
+Server runs with `start-simtellus.sh`, explore from there.
 
 ### Server http endpoints:
 

@@ -16,20 +16,20 @@ else
 fi
 
 # Ensure we have dot-env
-if [ -f ./app/.env ]; then
-  cp ./app/.env.template ./app/.env
+if [ -f ./.env ]; then
+  cp ./.env.template ./.env
 fi
 
 # Load environment variables from .env file
 set -a
-. /app/.env
+. /.env
 set +a
 
 # Create the log directory if it doesn't exist, using LOG_PATH
 mkdir -p "$(dirname "$LOG_PATH")"
 
 # Run server in the background
-ruby /app/server.rb &
+ruby server.rb &
 SIMTELLUS_PID=$!
 
 # Define the URL for the curl request
